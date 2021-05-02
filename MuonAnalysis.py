@@ -3,10 +3,6 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-# import our Gaussian class from Random.py file
-sys.path.append(".")
-from Random import Gaussian
-
 # main function for our muon analysis Python code
 if __name__ == "__main__":
     
