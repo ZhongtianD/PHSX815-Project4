@@ -49,6 +49,8 @@ if __name__ == "__main__":
     
     #calculare significance
     sigma = np.sqrt(sigma_SM**2+sigma_Exp**2)
+    Sig = np.abs(b_Exp-b_SM)/sigma
+    Sig = np.round_(Sig, decimals=1)
 
     # make figure
     plt.figure()
@@ -64,7 +66,7 @@ if __name__ == "__main__":
 
 
     plt.xlabel('$a_\\mu \\times 10^9 -1165900$')
-    plt.title(str(sigma)+'$\\sigma$ significance')
+    plt.title(str(Sig)+'$\\sigma$ significance')
 
 
     plt.savefig('Muon_measurements.png')
