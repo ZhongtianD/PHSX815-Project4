@@ -13,17 +13,14 @@ if __name__ == "__main__":
     seed = 2048
 
     # default mean of the distribution
-    mu = 0
+    mu = 20.61
     
     # default deviation of the distribution
-    sigma = 1
+    sigma = 41
     
 
     # default number of samples (per experiment)
-    Nsample = 1
-
-    # default number of experiments
-    Nexp = 1
+    Nsample = 10000
 
     # output file defaults
     doOutputFile = False
@@ -35,8 +32,7 @@ if __name__ == "__main__":
         print ("   -seed [number] seed for random number generation")
         print ("   -mu [number] mean for the gaussian distribution")
         print ("   -sigma [number] standard deviation for the gaussian distribution")
-        print ("   -Nsample [number] number of samples for each experiment")
-        print ("   -Nexp [number] number of experiments")
+        print ("   -Nsample [number] number of samples")
         print ("   -output [.npy file] output file saved in the .npy format")
         print
         sys.exit(1)
@@ -55,13 +51,8 @@ if __name__ == "__main__":
     if '-Nsample' in sys.argv:
         p = sys.argv.index('-Nsample')
         Ns = int(sys.argv[p+1])
-        if Ns > 0:
+        if Ns > 10:
             Nsample = Ns
-    if '-Nexp' in sys.argv:
-        p = sys.argv.index('-Nexp')
-        Ne = int(sys.argv[p+1])
-        if Ne > 0:
-            Nexp = Ne
     if '-output' in sys.argv:
         p = sys.argv.index('-output')
         OutputFileName = sys.argv[p+1]
@@ -71,11 +62,10 @@ if __name__ == "__main__":
     G = Gaussian(seed =seed, mu=mu, sigma =sigma)
 
     if doOutputFile:
-        S = np.zeros((Nexp,Nsample))
+        S = np.zeros(Nsample)
         #Generate samples
-        for e in range(Nexp):
-            x = np.random.rand()
-            #Generate samples with a random starting point
-            S[e] = G.Gaussian_sample(mu+x*sigma,Nsample)
+        x = np.random.rand()
+        #Generate samples with a random starting point
+        S = G.Gaussian_sample(mu+x*sigma,Nsample)
         np.save(OutputFileName, S)
    
