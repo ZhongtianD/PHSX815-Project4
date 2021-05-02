@@ -62,10 +62,7 @@ if __name__ == "__main__":
     G = Gaussian(seed =seed, mu=mu, sigma =sigma)
 
     if doOutputFile:
-        S = np.zeros(Nsample)
         #Generate samples
-        x = np.random.rand()
-        #Generate samples with a random starting point
-        S = G.Gaussian_sample(mu+x*sigma,Nsample)
+        S = G.Gaussian_sample(mu,Nsample)
         np.save(OutputFileName, S)
    
