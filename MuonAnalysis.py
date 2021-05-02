@@ -55,10 +55,10 @@ if __name__ == "__main__":
     # make figure
     plt.figure()
 
-    plt.errorbar([18.10], [1], xerr=[0.43], fmt='o', c='g',label="SM prediction")
-    plt.errorbar([20.61], [2], xerr=[0.41], fmt='o', c='m',label="experiment average")
-    plt.errorbar([20.40], [3], xerr=[0.54], fmt='o', c='r',label="experiment 1")
-    plt.errorbar([20.80], [4], xerr=[0.63], fmt='o', c='b',label="experiment 2")
+    plt.errorbar([b_SM], [1], xerr=[sigma_SM], fmt='o', c='g',label="SM prediction")
+    plt.errorbar([b_Exp], [2], xerr=[sigma_Exp], fmt='o', c='m',label="experiment average")
+    plt.errorbar([b_0], [3], xerr=[sigma_0], fmt='o', c='r',label="experiment 1")
+    plt.errorbar([b_1], [4], xerr=[sigma_1], fmt='o', c='b',label="experiment 2")
     plt.legend()
 
     ax = plt.gca()
