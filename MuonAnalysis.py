@@ -44,7 +44,7 @@ if __name__ == "__main__":
     sigma_1 = np.std(file1)/np.sqrt(Nsample1)
     
     #caculate the combined mean and uncertainty
-    b_Exp = (b1*sigma_0**2+b0*sigma_1**2)/(sigma_0**2+sigma_1**2)
+    b_Exp = (b_1*sigma_0**2+b_0*sigma_1**2)/(sigma_0**2+sigma_1**2)
     sigma_Exp = sigma_0*sigma_1/np.sqrt(sigma_0**2+sigma_1**2)
     
     #calculare significance
