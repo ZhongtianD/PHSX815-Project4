@@ -72,4 +72,6 @@ if __name__ == "__main__":
     plt.savefig('Muon_measurements.png')
     plt.show()
     
+    print(b_Exp,sigma,sigma_Exp)
+    
     
