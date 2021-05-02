@@ -63,6 +63,7 @@ if __name__ == "__main__":
 
     if doOutputFile:
         #Generate samples
+        print(mu)
         S = G.Gaussian_sample(mu,Nsample)
         np.save(OutputFileName, S)
    
