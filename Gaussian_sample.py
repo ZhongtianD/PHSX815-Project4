@@ -3,10 +3,6 @@ import sys
 import numpy as np
 
 
-sys.path.append(".")
-from Random import Gaussian
-
-# main function for our coin toss Python code
 if __name__ == "__main__":
 
 
